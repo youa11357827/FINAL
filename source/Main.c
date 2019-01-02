@@ -23,7 +23,7 @@ int main(void)
 	Card deck[52];/*define array of Cards*/
 	int heart = 0;
 	/* initialize array of pointers */
-	const char *face[] = { "1","2","3","4","5","6","7","8","9","T","J","Q","K" };
+	const int face[] = { 1,2,3,4,5,6,7,8,9,10,11,12,13 };
 	const char *suit[] = { "紅心","方塊","梅花","黑桃" };
 
 	srand(time(NULL));/* randomize */
@@ -40,60 +40,60 @@ int main(void)
 void compare(Card  *wDeck)
 {
 	int formpl = 0, numpl[20] = { 0 }, colorpl[5] = { 0 }, pornpl = 0, sumpl = 0, onepairpl, twopairpl;
-	int formco = 0, numco[20] = { 0 }, colorco[5] = { 0 }, pornco = 0, sumco = 0, onepairco, twopairpl;
+	int formco = 0, numco[20] = { 0 }, colorco[5] = { 0 }, pornco = 0, sumco = 0, onepairco, twopairco;
 	int j;
 	//===========================================================================玩家
 	for (int i = 0; i < 7; i++)
 	{
-		if (*wDeck[i].face == '1')
+		if (wDeck[i].face == 1)
 		{
 			numpl[1]++;
 		}
-		if (*wDeck[i].face == '2')
+		if (wDeck[i].face == 2)
 		{
 			numpl[2]++;
 		}
-		if (*wDeck[i].face == '3')
+		if (wDeck[i].face == 3)
 		{
 			numpl[3]++;
 		}
-		if (*wDeck[i].face == '4')
+		if (wDeck[i].face ==4)
 		{
 			numpl[4]++;
 		}
-		if (*wDeck[i].face == '5')
+		if (wDeck[i].face == 5)
 		{
 			numpl[5]++;
 		}
-		if (*wDeck[i].face == '6')
+		if (wDeck[i].face == 6)
 		{
 			numpl[6]++;
 		}
-		if (*wDeck[i].face == '7')
+		if (wDeck[i].face == 7)
 		{
 			numpl[7]++;
 		}
-		if (*wDeck[i].face == '8')
+		if (wDeck[i].face == 8)
 		{
 			numpl[8]++;
 		}
-		if (*wDeck[i].face == '9')
+		if (wDeck[i].face == 9)
 		{
 			numpl[9]++;
 		}
-		if (*wDeck[i].face == 'T')
+		if (wDeck[i].face == 10)
 		{
 			numpl[10]++;
 		}
-		if (*wDeck[i].face == 'J')
+		if (wDeck[i].face == 11)
 		{
 			numpl[11]++;
 		}
-		if (*wDeck[i].face == 'Q')
+		if (wDeck[i].face == 12)
 		{
 			numpl[12]++;
 		}
-		if (*wDeck[i].face == 'K')
+		if (wDeck[i].face == 13)
 		{
 			numpl[13]++;
 		}
@@ -161,60 +161,63 @@ void compare(Card  *wDeck)
 			}
 		}
 	}
-	
+	for (int i = 1; i <= 13; i++)
+	{
+		printf("%d", numpl[i]);
+	}
 
 	//===========================================================================電腦
 	for (int i = 2; i < 9; i++)
 	{
-		if (*wDeck[i].face == '1')
+		if (wDeck[i].face == 1)
 		{
 			numco[1]++;
 		}
-		if (*wDeck[i].face == '2')
+		if (wDeck[i].face == 2)
 		{
 			numco[2]++;
 		}
-		if (*wDeck[i].face == '3')
+		if (wDeck[i].face == 3)
 		{
 			numco[3]++;
 		}
-		if (*wDeck[i].face == '4')
+		if (wDeck[i].face == 4)
 		{
 			numco[4]++;
 		}
-		if (*wDeck[i].face == '5')
+		if (wDeck[i].face == 5)
 		{
 			numco[5]++;
 		}
-		if (*wDeck[i].face == '6')
+		if (wDeck[i].face == 6)
 		{
 			numco[6]++;
 		}
-		if (*wDeck[i].face == '7')
+		if (wDeck[i].face == 7)
 		{
 			numco[7]++;
 		}
-		if (*wDeck[i].face == '8')
+		if (wDeck[i].face ==8)
 		{
 			numco[8]++;
 		}
-		if (*wDeck[i].face == '9')
+		if (wDeck[i].face == 9)
 		{
 			numco[9]++;
 		}
-		if (*wDeck[i].face == 'T')
+		if (wDeck[i].face == 10)
 		{
 			numco[10]++;
 		}
-		if (*wDeck[i].face == 'J')
+		if (wDeck[i].face ==11)
 		{
 			numco[11]++;
 		}
-		if (*wDeck[i].face == 'Q')
+		if (wDeck[i].face == 12)
 		{
 			numco[12]++;
 		}
-		if (*wDeck[i].face == 'K')
+		if (wDeck[i].face == 13)
 		{
 			numco[13]++;
 		}
@@ -275,7 +278,8 @@ void compare(Card  *wDeck)
 			formco = 7;//鐵支
 		}
 	}
-
+	
+	
 	//=========================================================================排型比較
 	//return 1 玩家贏  
 	//return 0 電腦贏
@@ -601,6 +605,20 @@ void compare(Card  *wDeck)
 			}
 		}
 	}
+	//=================================如果都是同花
+	if (formco ==5&&formpl==5)
+	{
+		if (colorco[1]>=5)
+		{
+			for (int i = 0; i <= 6; i++)
+			{
+				if (strcmp(wDeck[i].suit, "黑桃"))
+				{
+					numco[*wDeck[i].face] = 0;
+				}
+			}
+		}
+	}
 cw:
 	return 0;
 pw:
@@ -645,7 +663,7 @@ void deal(const Card * const wDeck)
 	int i;/* counter */
 	/* loop through wDeck */
 	for (i = 0; i <= 51; i++) {
-		printf("%s%-5s%s", wDeck[i].suit, wDeck[i].face,
+		printf("%s%-5d%s", wDeck[i].suit, wDeck[i].face,
 			(i + 1) % 4 ? " " : "\n");
 	}/* end for */
 }/* end function deal */
