@@ -606,11 +606,51 @@ void compare(Card  *wDeck)
 		}
 	}
 	//=================================如果都是同花
-	if (formco ==5&&formpl==5)
+	if (formco ==5 && formpl == 5)
 	{
-		if (colorco[1]>=5)
+		if (colorpl[1]>=5)
 		{
 			for (int i = 0; i <= 6; i++)
+			{
+				if (strcmp(wDeck[i].suit, "黑桃"))
+				{
+					numpl[*wDeck[i].face] = 0;
+				}
+			}
+		}
+		else if (colorpl[2] >= 5)
+		{
+			for (int i = 0; i <= 6; i++)
+			{
+				if (strcmp(wDeck[i].suit, "紅心"))
+				{
+					numpl[*wDeck[i].face] = 0;
+				}
+			}
+		}
+		else if (colorpl[3] >= 5)
+		{
+			for (int i = 0; i <= 6; i++)
+			{
+				if (strcmp(wDeck[i].suit, "方塊"))
+				{
+					numpl[*wDeck[i].face] = 0;
+				}
+			}
+		}
+		else if (colorpl[4] >= 5)
+		{
+			for (int i = 0; i <= 6; i++)
+			{
+				if (strcmp(wDeck[i].suit, "梅花"))
+				{
+					numpl[*wDeck[i].face] = 0;
+				}
+			}
+		}
+		if (colorco[1] >= 5)
+		{
+			for (int i = 2; i <= 8; i++)
 			{
 				if (strcmp(wDeck[i].suit, "黑桃"))
 				{
@@ -618,6 +658,211 @@ void compare(Card  *wDeck)
 				}
 			}
 		}
+		else if (colorco[2] >= 5)
+		{
+			for (int i = 2; i <= 8; i++)
+			{
+				if (strcmp(wDeck[i].suit, "紅心"))
+				{
+					numco[*wDeck[i].face] = 0;
+				}
+			}
+		}
+		else if (colorco[3] >= 5)
+		{
+			for (int i = 2; i <= 8; i++)
+			{
+				if (strcmp(wDeck[i].suit, "方塊"))
+				{
+					numco[*wDeck[i].face] = 0;
+				}
+			}
+		}
+		else if (colorco[4] >= 5)
+		{
+			for (int i = 2; i <= 8; i++)
+			{
+				if (strcmp(wDeck[i].suit, "梅花"))
+				{
+					numco[*wDeck[i].face] = 0;
+				}
+			}
+		}
+		if (numpl[1]>numco[1])
+		{
+			goto pw;
+		}
+		else if (numpl[1] < numco[1])
+		{
+			goto cw;
+		}
+		else
+		{
+			for (int i = 13; i >=2; i--)
+			{
+				if (numpl[i] < numco[i])
+				{
+					goto pw;
+				}
+				else if (numpl[i] > numco[i])
+				{
+					goto cw;
+				}
+			}
+			goto sh;
+		}
+	}
+	//=================================如果都是葫蘆
+	if (formco == 6 && formpl == 6)
+	{
+		if (numco[1]==3 && numpl[1]<numco[1])
+		{
+			goto cw;
+		}
+		else if (numpl[1] == 3 && numpl[1] > numco[1])
+		{
+			goto pw;
+		}
+		else if (numpl[1] == 3 && numco[1] == 3)
+		{
+			for  (int i = 13;  i >=2;  i--)
+			{
+				if (numco[i]>=2 && 2>numpl[i])
+				{
+					goto cw;
+				}
+				else if (numpl[i] >= 2 && numco[i] < 2)
+				{
+					goto pw;
+				}
+				else if (numpl[i] >= 2 && numco[i] >= 2)
+				{
+					goto sh;
+				}
+			}
+		}
+		else if (numco[1]<3&&numpl[1]<3)
+		{
+			for (int i = 13; i >= 2 ; i--)
+			{
+				if (numco[i]==3&&numpl[i]<numco[i])
+				{
+					goto cw;
+				}
+				else if (numpl[i] == 3 && numco[i] < numpl[i])
+				{
+					goto pw;
+				}
+				else if (numpl[i] == 3&& numco[i] == 3)
+				{
+					if (numco[1]==2&&numco[1]>numpl[1])
+					{
+						goto cw;
+					}
+					if (numpl[1] == 2 && numco[1] < numpl[1])
+					{
+						goto pw;
+					}
+					if (numpl[1]==2&&numco[1]==2)
+					{
+						goto sh;
+					}
+					if (numpl[1]<2 &&numco[1]<2)
+					{
+						for (int i = 13; i >= 2; i--)
+						{
+							if (numpl[i] >= 2 && numco[i] < numpl[i])
+							{
+								goto pw;
+							}
+							else if (numco[i] >= 2 && numco[i] > numpl[i])
+							{
+								goto cw;
+							}
+							else if (numco[i] >= 2 && numpl[i]>=2)
+							{
+								goto sh;
+							}
+						}
+
+					}
+				}
+			}
+		}
+	}
+	//=================================如果都是鐵支
+	if (formco == 7 && formpl == 7)
+	{
+		if (numco[1]==4&&numpl[1]<numco[1])
+		{
+			goto cw;
+		}
+		else if (numpl[1] == 4 && numpl[1] > numco[1])
+		{
+			goto pw;
+		}
+		else if (numpl[1]==4&&numco[1]==4)
+		{
+			for (int i = 13; i >= 2; i--)
+			{
+				if (numco[i]>0&&numpl[i]==0)
+				{
+					goto cw;
+				}
+				else if (numpl[i] > 0 && numco[i] == 0)
+				{
+					goto pw;
+				}
+				else if (numpl[i] > 0&&numco[i]>0)
+				{
+					goto sh;
+				}
+			}
+		}
+		else if (numpl[1]<4&&numco[1]<4)
+		{
+			if (numpl[1]>0&&numco[1]==0)
+			{
+				goto pw;
+			}
+			else if (numco[1] > 0 && numpl[1] == 0)
+			{
+				goto cw;
+			}
+			else if (numco[1] == 0 && numpl[1] == 0)
+			{
+				for (int i = 13; i >= 2; i--)
+				{
+					if (numco[i]==4&&numpl[i]<numco[i])
+					{
+						goto cw;
+					}
+					else if (numpl[i] == 4 && numco[i] < numpl[i])
+					{
+						goto pw;
+					}
+					else if (numpl[i] == 4&& numco[i] == 4)
+					{
+						for (int i = 13; i >=2 ; i--)
+						{
+							if (numco[i]>0&&numpl[i]<numco[i])
+							{
+								goto cw;
+							}
+							else if (numpl[i] > 0 && numpl[i] > numco[i])
+							{
+								goto pw;
+							}
+							else if (numpl[i]>0&&numco[i]>0)
+							{
+								goto sh;
+							}
+						}
+					}
+				}
+			}
+		}
+
 	}
 cw:
 	return 0;
