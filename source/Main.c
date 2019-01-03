@@ -39,9 +39,9 @@ int main(void)
 
 void compare(Card  *wDeck)
 {
-	int formpl = 0, numpl[20] = { 0 }, colorpl[5] = { 0 }, pornpl = 0, sumpl = 0, onepairpl, twopairpl;
-	int formco = 0, numco[20] = { 0 }, colorco[5] = { 0 }, pornco = 0, sumco = 0, onepairco, twopairco;
-	int j;
+	int formpl = 0, numpl[20] = { 0 }, colorpl[5] = { 0 }, pornpl = 0, sumpl = 0, onepairpl, twopairpl, SFnumpl[20]= {0};
+	int formco = 0, numco[20] = { 0 }, colorco[5] = { 0 }, pornco = 0, sumco = 0, onepairco, twopairco, SFnumco[20] = { 0 };
+	int j,hole,juice,huge,dick,ass;
 	//===========================================================================玩家
 	for (int i = 0; i < 7; i++)
 	{
@@ -153,19 +153,54 @@ void compare(Card  *wDeck)
 		{
 			formpl = 7;//鐵支
 		}
-		if ((numpl[i] >= 1 && numpl[i + 1] >= 1 && numpl[i + 2] >= 1 && numpl[i + 3] >= 1 && numpl[i + 4] >= 1) || (numpl[10] >= 1 && numpl[11] >= 1 && numpl[12] >= 1 && numpl[13] >= 1 && numpl[1] >= 1))
+		
+	}
+	for (int i = 1; i <20; i++)
+	{
+		SFnumpl[i] = numpl[i];
+	}
+	for (int i = 0; i <= 6; i++)
+	{
+		if (colorpl[1]>=5)
 		{
-			if ((!strcmp(wDeck[i].suit, wDeck[i + 1].suit)) && (!strcmp(wDeck[i].suit, wDeck[i + 2].suit)) && (!strcmp(wDeck[i].suit, wDeck[i + 3].suit)) && (!strcmp(wDeck[i].suit, wDeck[i + 4].suit)))
+			if (strcmp(wDeck[i].suit, "黑桃"))
 			{
-				formpl = 8; //同花順
+				SFnumpl[*wDeck[i].face] --;
+			}
+		}
+		if (colorpl[2] >= 5)
+		{
+			if (strcmp(wDeck[i].suit, "紅心"))
+			{
+				SFnumpl[*wDeck[i].face] --;
+			}
+		}
+		if (colorpl[3] >= 5)
+		{
+			if (strcmp(wDeck[i].suit, "方塊"))
+			{
+				SFnumpl[*wDeck[i].face] --;
+			}
+		}
+		if (colorpl[1] >= 5)
+		{
+			if (strcmp(wDeck[i].suit, "梅花"))
+			{
+				SFnumpl[*wDeck[i].face] --;
 			}
 		}
 	}
-	for (int i = 1; i <= 13; i++)
+	for (int i = 1; i <= 9; i++)
 	{
-		printf("%d", numpl[i]);
+		if (SFnumpl[i]>=1&&SFnumpl[i+1]>=1 && SFnumpl[i + 2] >= 1 && SFnumpl[i + 3] >= 1 && SFnumpl[i + 4] >= 1)
+		{
+			formpl = 8;//同花順
+		}
 	}
-
+	if (SFnumpl[1] >= 1 && SFnumpl[10] >= 1 && SFnumpl[11] >= 1 && SFnumpl[12] >= 1 && SFnumpl[13] >= 1)
+	{
+		formpl = 9;//同花大順
+	}
 	//===========================================================================電腦
 	for (int i = 2; i < 9; i++)
 	{
@@ -278,7 +313,52 @@ void compare(Card  *wDeck)
 			formco = 7;//鐵支
 		}
 	}
-	
+	for (int i = 1; i < 20; i++)
+	{
+		SFnumco[i] = numco[i];
+	}
+	for (int i = 2; i <= 8; i++)
+	{
+		if (colorco[1] >= 5)
+		{
+			if (strcmp(wDeck[i].suit, "黑桃"))
+			{
+				SFnumco[*wDeck[i].face] --;
+			}
+		}
+		if (colorco[2] >= 5)
+		{
+			if (strcmp(wDeck[i].suit, "紅心"))
+			{
+				SFnumco[*wDeck[i].face] --;
+			}
+		}
+		if (colorco[3] >= 5)
+		{
+			if (strcmp(wDeck[i].suit, "方塊"))
+			{
+				SFnumco[*wDeck[i].face] --;
+			}
+		}
+		if (colorco[1] >= 5)
+		{
+			if (strcmp(wDeck[i].suit, "梅花"))
+			{
+				SFnumco[*wDeck[i].face] --;
+			}
+		}
+	}
+	for (int i = 1; i <= 9; i++)
+	{
+		if (SFnumco[i] >= 1 && SFnumco[i + 1] >= 1 && SFnumco[i + 2] >= 1 && SFnumco[i + 3] >= 1 && SFnumco[i + 4] >= 1)
+		{
+			formco = 8;//同花順
+		}
+	}
+	if (SFnumco[1] >= 1 && SFnumco[10] >= 1 && SFnumco[11] >= 1 && SFnumco[12] >= 1 && SFnumco[13] >= 1)
+	{
+		formpl = 9;//同花大順
+	}
 	
 	//=========================================================================排型比較
 	//return 1 玩家贏  
@@ -863,6 +943,30 @@ void compare(Card  *wDeck)
 			}
 		}
 
+	}
+	//=================================如果都是同花順
+	if (formco==8&&formpl==8)
+	{
+		for  (int i = 13; i >=5; i++)
+		{
+			if (SFnumco[i]>SFnumpl[i]&&SFnumco[i]>=1&&SFnumco[i-1]>=1 && SFnumco[i - 2] >= 1 && SFnumco[i - 3] >= 1 && SFnumco[i - 4] >= 1)
+			{
+				goto cw;
+			}
+			else if (SFnumco[i] < SFnumpl[i] && SFnumpl[i] >= 1 && SFnumpl[i - 1] >= 1 && SFnumpl[i - 2] >= 1 && SFnumpl[i - 3] >= 1 && SFnumpl[i - 4] >= 1)
+			{
+				goto pw;
+			}
+			else if (SFnumco[i] >= 1 && SFnumco[i - 1] >= 1 && SFnumco[i - 2] >= 1 && SFnumco[i - 3] >= 1 && SFnumco[i - 4] >= 1 && SFnumpl[i] >= 1 && SFnumpl[i - 1] >= 1 && SFnumpl[i - 2] >= 1 && SFnumpl[i - 3] >= 1 && SFnumpl[i - 4] >= 1)
+			{
+				goto sh;
+			}
+		}
+	}
+	//=================================如果都是同花大順
+	if (formco==9&&formpl==9)
+	{
+		goto sh;
 	}
 cw:
 	return 0;
