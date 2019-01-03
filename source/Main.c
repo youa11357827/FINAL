@@ -39,8 +39,8 @@ int main(void)
 
 void compare(Card  *wDeck)
 {
-	int formpl = 0, numpl[20] = { 0 }, colorpl[5] = { 0 }, pornpl = 0, sumpl = 0, onepairpl, twopairpl, SFnumpl[20]= {0};
-	int formco = 0, numco[20] = { 0 }, colorco[5] = { 0 }, pornco = 0, sumco = 0, onepairco, twopairco, SFnumco[20] = { 0 };
+	int formpl = 0, numpl[20] = { 0 }, colorpl[5] = { 0 }, pornplFH = 0, pornplOP = 0, sumpl = 0, onepairpl, twopairpl, SFnumpl[20]= {0};
+	int formco = 0, numco[20] = { 0 }, colorco[5] = { 0 }, porncoFH = 0, porncoOP = 0, sumco = 0, onepairco, twopairco, SFnumco[20] = { 0 };
 	int j,hole,juice,huge,dick,ass;
 	//===========================================================================玩家
 	for (int i = 0; i < 7; i++)
@@ -120,16 +120,16 @@ void compare(Card  *wDeck)
 		if (numpl[i] == 2)
 		{
 			formpl = 1;//一對
-			pornpl++;
+			pornplOP++;
 		}
-		if (pornpl >= 2)
+		if (pornplOP >= 2)
 		{
 			formpl = 2;//兩對
 		}
 		if (numpl[i] == 3)
 		{
 			formpl = 3;//三條
-			pornpl++;
+			pornplFH++;
 		}
 		if ((numpl[i] >= 1 && numpl[i + 1] >= 1 && numpl[i + 2] >= 1 && numpl[i + 3] >= 1 && numpl[i + 4] >= 1) ||( numpl[10] >= 1 && numpl[11] >= 1 && numpl[12] >= 1 && numpl[13] >= 1 && numpl[1] >= 1))
 		{
@@ -145,7 +145,7 @@ void compare(Card  *wDeck)
 	}
 	for (int i = 1; i <= 13; i++)
 	{
-		if (pornpl>=2)
+		if (pornplOP >= 1 && pornplFH >= 1)
 		{
 			formpl = 6;//葫蘆
 		}
@@ -279,16 +279,16 @@ void compare(Card  *wDeck)
 		if (numco[i] == 2)
 		{
 			formco = 1;//一對
-			pornco++;
+			porncoOP++;
 		}
-		if (pornco >= 2)
+		if (porncoOP >= 2)
 		{
 			formco = 2;//兩對
 		}
 		if (numco[i] == 3)
 		{
 			formco = 3;//三條
-			pornco++;
+			porncoFH++;
 		}
 		if (numco[i] >= 1 && numco[i + 1] >= 1 && numco[i + 2] >= 1 && numco[i + 3] >= 1 && numco[i + 4] >= 1 || numco[10] >= 1 && numco[11] >= 1 && numco[12] >= 1 && numco[13] >= 1 && numco[1] >= 1)
 		{
@@ -304,7 +304,7 @@ void compare(Card  *wDeck)
 	}
 	for (int i = 1; i <= 13; i++)
 	{
-		if (pornco >= 2)
+		if (porncoOP >= 1&&porncoFH>=1)
 		{
 			formco = 6;//葫蘆
 		}
