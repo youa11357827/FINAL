@@ -182,7 +182,7 @@ void compare(Card  *wDeck)
 				SFnumpl[*wDeck[i].face] --;
 			}
 		}
-		if (colorpl[1] >= 5)
+		if (colorpl[4] >= 5)
 		{
 			if (strcmp(wDeck[i].suit, "±öªá"))
 			{
@@ -340,7 +340,7 @@ void compare(Card  *wDeck)
 				SFnumco[*wDeck[i].face] --;
 			}
 		}
-		if (colorco[1] >= 5)
+		if (colorco[4] >= 5)
 		{
 			if (strcmp(wDeck[i].suit, "±öªá"))
 			{

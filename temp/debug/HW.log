@@ -17,25 +17,30 @@ d:\ntut\program\hw\program\final3\source\main.c(88): warning C4047: '==': 'const
 d:\ntut\program\hw\program\final3\source\main.c(92): warning C4047: '==': 'const char *' 與 'int' 間接取值的層級不同
 d:\ntut\program\hw\program\final3\source\main.c(96): warning C4047: '==': 'const char *' 與 'int' 間接取值的層級不同
 d:\ntut\program\hw\program\final3\source\main.c(101): warning C4013: 'strcmp' 未定義; 假設 extern 傳回整數
-d:\ntut\program\hw\program\final3\source\main.c(172): warning C4047: '==': 'const char *' 與 'int' 間接取值的層級不同
-d:\ntut\program\hw\program\final3\source\main.c(176): warning C4047: '==': 'const char *' 與 'int' 間接取值的層級不同
-d:\ntut\program\hw\program\final3\source\main.c(180): warning C4047: '==': 'const char *' 與 'int' 間接取值的層級不同
-d:\ntut\program\hw\program\final3\source\main.c(184): warning C4047: '==': 'const char *' 與 'int' 間接取值的層級不同
-d:\ntut\program\hw\program\final3\source\main.c(188): warning C4047: '==': 'const char *' 與 'int' 間接取值的層級不同
-d:\ntut\program\hw\program\final3\source\main.c(192): warning C4047: '==': 'const char *' 與 'int' 間接取值的層級不同
-d:\ntut\program\hw\program\final3\source\main.c(196): warning C4047: '==': 'const char *' 與 'int' 間接取值的層級不同
-d:\ntut\program\hw\program\final3\source\main.c(200): warning C4047: '==': 'const char *' 與 'int' 間接取值的層級不同
-d:\ntut\program\hw\program\final3\source\main.c(204): warning C4047: '==': 'const char *' 與 'int' 間接取值的層級不同
-d:\ntut\program\hw\program\final3\source\main.c(208): warning C4047: '==': 'const char *' 與 'int' 間接取值的層級不同
-d:\ntut\program\hw\program\final3\source\main.c(212): warning C4047: '==': 'const char *' 與 'int' 間接取值的層級不同
-d:\ntut\program\hw\program\final3\source\main.c(216): warning C4047: '==': 'const char *' 與 'int' 間接取值的層級不同
-d:\ntut\program\hw\program\final3\source\main.c(220): warning C4047: '==': 'const char *' 與 'int' 間接取值的層級不同
-d:\ntut\program\hw\program\final3\source\main.c(533): warning C4553: '==': 未使用運算式結果; 您是否想要 '='?
-d:\ntut\program\hw\program\final3\source\main.c(534): warning C4553: '==': 未使用運算式結果; 您是否想要 '='?
-d:\ntut\program\hw\program\final3\source\main.c(868): warning C4098: 'compare': 'void' 函式正在傳回值
-d:\ntut\program\hw\program\final3\source\main.c(870): warning C4098: 'compare': 'void' 函式正在傳回值
-d:\ntut\program\hw\program\final3\source\main.c(872): warning C4098: 'compare': 'void' 函式正在傳回值
+d:\ntut\program\hw\program\final3\source\main.c(207): warning C4047: '==': 'const char *' 與 'int' 間接取值的層級不同
+d:\ntut\program\hw\program\final3\source\main.c(211): warning C4047: '==': 'const char *' 與 'int' 間接取值的層級不同
+d:\ntut\program\hw\program\final3\source\main.c(215): warning C4047: '==': 'const char *' 與 'int' 間接取值的層級不同
+d:\ntut\program\hw\program\final3\source\main.c(219): warning C4047: '==': 'const char *' 與 'int' 間接取值的層級不同
+d:\ntut\program\hw\program\final3\source\main.c(223): warning C4047: '==': 'const char *' 與 'int' 間接取值的層級不同
+d:\ntut\program\hw\program\final3\source\main.c(227): warning C4047: '==': 'const char *' 與 'int' 間接取值的層級不同
+d:\ntut\program\hw\program\final3\source\main.c(231): warning C4047: '==': 'const char *' 與 'int' 間接取值的層級不同
+d:\ntut\program\hw\program\final3\source\main.c(235): warning C4047: '==': 'const char *' 與 'int' 間接取值的層級不同
+d:\ntut\program\hw\program\final3\source\main.c(239): warning C4047: '==': 'const char *' 與 'int' 間接取值的層級不同
+d:\ntut\program\hw\program\final3\source\main.c(243): warning C4047: '==': 'const char *' 與 'int' 間接取值的層級不同
+d:\ntut\program\hw\program\final3\source\main.c(247): warning C4047: '==': 'const char *' 與 'int' 間接取值的層級不同
+d:\ntut\program\hw\program\final3\source\main.c(251): warning C4047: '==': 'const char *' 與 'int' 間接取值的層級不同
+d:\ntut\program\hw\program\final3\source\main.c(255): warning C4047: '==': 'const char *' 與 'int' 間接取值的層級不同
+d:\ntut\program\hw\program\final3\source\main.c(613): warning C4553: '==': 未使用運算式結果; 您是否想要 '='?
+d:\ntut\program\hw\program\final3\source\main.c(614): warning C4553: '==': 未使用運算式結果; 您是否想要 '='?
+d:\ntut\program\hw\program\final3\source\main.c(972): warning C4098: 'compare': 'void' 函式正在傳回值
+d:\ntut\program\hw\program\final3\source\main.c(974): warning C4098: 'compare': 'void' 函式正在傳回值
+d:\ntut\program\hw\program\final3\source\main.c(976): warning C4098: 'compare': 'void' 函式正在傳回值
+d:\ntut\program\hw\program\final3\source\main.c(44): warning C4101: 'juice': 未參考的區域變數
 d:\ntut\program\hw\program\final3\source\main.c(42): warning C4101: 'twopairpl': 未參考的區域變數
+d:\ntut\program\hw\program\final3\source\main.c(44): warning C4101: 'huge': 未參考的區域變數
+d:\ntut\program\hw\program\final3\source\main.c(44): warning C4101: 'hole': 未參考的區域變數
 d:\ntut\program\hw\program\final3\source\main.c(43): warning C4101: 'twopairco': 未參考的區域變數
-d:\ntut\program\hw\program\final3\source\main.c(911): warning C4477: 'printf' : 格式字串 '%-5d' 需要 'int' 類型的引數，但 variadic 引數 2 的類型為 'const char *const '
+d:\ntut\program\hw\program\final3\source\main.c(44): warning C4101: 'dick': 未參考的區域變數
+d:\ntut\program\hw\program\final3\source\main.c(44): warning C4101: 'ass': 未參考的區域變數
+d:\ntut\program\hw\program\final3\source\main.c(1015): warning C4477: 'printf' : 格式字串 '%-5d' 需要 'int' 類型的引數，但 variadic 引數 2 的類型為 'const char *const '
   HW.vcxproj -> D:\NTUT\program\HW\program\FINAL3\HW\HW\..\..\temp\debug\HW.exe
